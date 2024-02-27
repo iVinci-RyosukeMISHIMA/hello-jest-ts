@@ -10,7 +10,7 @@ jobs:
           command: npm install
       - run:
           name: Run Test
-          command: npm test -- src/chapter2/getting-started-jest/array.test.ts
+          command: npm test -- src/chapter2/getting-started-jest --runInBand --maxConCurrency=10
 workflows:
   test:
     jobs:
