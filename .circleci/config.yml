@@ -5,7 +5,13 @@ jobs:
       - image: cimg/node:18.14.0
     steps:
       - checkout
-workflow:
+      - run:
+          name: Install node packages
+          command: npm install
+      - run:
+          name: Run Test
+          command: npm test -- src/chapter2/getting-started-jest/array.test.ts
+workflows:
   test:
     jobs:
       - test
